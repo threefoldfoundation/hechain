@@ -1,0 +1,10 @@
+FROM scratch
+
+ARG binaries_location=dist/linux
+
+COPY $binaries_location/hechaind /hechaind
+COPY $binaries_location/hechainc /hechainc
+
+EXPOSE 23112
+
+ENTRYPOINT ["/hechaind"]
